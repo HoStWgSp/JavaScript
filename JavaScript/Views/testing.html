@@ -11,19 +11,23 @@
    <header id="header-index">
        <h1>LifeSpot - тестовая страница</h1>
        <p>Здесь можно экспериментировать с кодом</p>
-       <input type="text" oninput=" // Получим все контейнеры с видео
+       <input type="text" oninput=" /*Код ниже отрабатывает каждый раз при вводе символа в input*/
+       // Сохраняем текст пользовательского запроса.
+       let inputString = document.getElementsByTagName('input')[0].value.toLowerCase();
+       // Находим контейнеры с видео, которые необходимо фильтровать
        let elements = document.getElementsByClassName('video-container');
-      
-       // Пробежимся в цикле и выведем все в консоль
+        
+       // Пробегаемся по контейнерам
        for (let i = 0; i <= elements.length; i++ ){
-
-        // Получим всё что внутри контейнера
-        let childElements = elements[i];
-        // Получим элемент, содержащий описание видео
-        // Он у нас единственный с тегом h3, снова воспользуемся поиском по тегу,
-        let videoDescription = childElements.getElementsByTagName('h3')[0];
-        // Выведем его текст на консоль
-        console.log(videoDescription.innerText);
+          // Вытаскиваем текст описания видео, которое необходимо отфильтровать
+          let videoText = elements[i].querySelector('.video-title').innerText;
+          // Выполняем фильтрацию, сравнивая значения в нижнем регистре
+          if(!videoText.toLowerCase().includes(inputString.toLowerCase())){
+              // Описание
+              elements[i].style.display = 'none';
+          } else {
+              elements[i].style.display = 'inline-block';
+          }
        } " size=50%>
    </header>
   
@@ -35,7 +39,24 @@
    </aside>
   
    <!--SIDEBAR-->
-   <body></body>
+   <body>
+    <div class="bordered">
+        <div class="video-container">
+             <!--Нью-Йорк-->
+             <iframe width="560" height="315" src="https://www.youtube.com/embed/srlpC5tmhYs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+             <h3 class="video-title">Нью-Йорк, Брайант Парк</h3>
+         </div>
+         <div class="video-container">
+             <!--Санкт-Петербург-->
+             <iframe width="560" height="315" src="https://www.youtube.com/embed/wCcMcaiRbhM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+             <h3 class="video-title">Санкт-Петербург, Невский Проспект</h3>
+         </div>
+         <div class="video-container">
+             <!--Лондон-->
+             <iframe width="560" height="315" src="https://www.youtube.com/embed/JplMzss6_YE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+             <h3 class="video-title">Лондон, автобусный маршрут</h3>
+         </div>
+    </div></body>
    <!--FOOTER-->
  
 </html>
