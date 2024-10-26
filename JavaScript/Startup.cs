@@ -27,19 +27,19 @@ namespace JavaScript
  
            app.UseEndpoints(endpoints =>
            {
-               endpoints.MapGet("/", async context =>
-               {
-                   var viewPath = Path.Combine(Directory.GetCurrentDirectory(), "Views", "index.html");
+            //    endpoints.MapGet("/", async context =>
+            //    {
+            //        var viewPath = Path.Combine(Directory.GetCurrentDirectory(), "Views", "index.html");
                   
-                   // Загружаем шаблон страницы, вставляя в него элементы
-                   var html =  new StringBuilder(await File.ReadAllTextAsync(viewPath))
-                       .Replace("<!--SIDEBAR-->", sideBarHtml)
-                       .Replace("<!--FOOTER-->", footerHtml);
+            //        // Загружаем шаблон страницы, вставляя в него элементы
+            //        var html =  new StringBuilder(await File.ReadAllTextAsync(viewPath))
+            //            .Replace("<!--SIDEBAR-->", sideBarHtml)
+            //            .Replace("<!--FOOTER-->", footerHtml);
                   
-                   await context.Response.WriteAsync(html.ToString());
-               });
+            //        await context.Response.WriteAsync(html.ToString());
+            //    });
               
-               endpoints.MapGet("/testing", async context =>
+               endpoints.MapGet("/", async context =>
                {
                    var viewPath = Path.Combine(Directory.GetCurrentDirectory(), "Views", "testing.html");
                   
