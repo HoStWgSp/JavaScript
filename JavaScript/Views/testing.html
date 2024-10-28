@@ -8,66 +8,23 @@
   
        <!-- Внешний скрипт с функциями -->
        <script type="text/javascript" src="../Static/JS/index.js"></script>
-     
-       <!-- Внутренний скрипт с вызовами функций -->
-       <script>
-        // Проверка на возраст
-        checkAge();
-        
-        // сохранение сессии
-        handleSession()
-        
-        // вывод данных сессии в консоль
-        sessionLog();
-     
-        // функция для получения пользовательского ввода    
-        const inputParseFunction = function(){
-            return document.getElementsByTagName('input')[0].value.toLowerCase();
-        }
-       </script>
    </head>
   
    <header id="header-index">
        <h1>LifeSpot - тестовая страница</h1>
        <p>Здесь можно экспериментировать с кодом</p>
-       <input type="text" oninput="
-        // Функция объявлена через expression
-    //    const inputParseFunction = function(){
-    //        return document.getElementsByTagName('input')[0].value.toLowerCase();
-    //    }
-      
-    //    // Вызов (функция в аргумент передаётся без круглых скобок)
-        filterContent( inputParseFunction )
- 
-" size=50%>
    </header>
   
    <aside id="sidebar">
        <div class="navbar">
-           <a href="/"><p>Трансляции</p></a>
-           <a href="/"><p>О проекте</p></a>
+        <a href="/"><p>Все трансляции</p></a>
+        <a href="/about"><p>О проекте</p></a>
+        <a href="/testing"><p>Тестирование</p></a>
        </div>
    </aside>
   
    <!--SIDEBAR-->
-   <body>
-    <div class="bordered">
-        <div class="video-container">
-             <!--Нью-Йорк-->
-             <iframe width="560" height="315" src="https://www.youtube.com/embed/srlpC5tmhYs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-             <h3 class="video-title">Нью-Йорк, Брайант Парк</h3>
-         </div>
-         <div class="video-container">
-             <!--Санкт-Петербург-->
-             <iframe width="560" height="315" src="https://www.youtube.com/embed/wCcMcaiRbhM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-             <h3 class="video-title">Санкт-Петербург, Невский Проспект</h3>
-         </div>
-         <div class="video-container">
-             <!--Лондон-->
-             <iframe width="560" height="315" src="https://www.youtube.com/embed/JplMzss6_YE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-             <h3 class="video-title">Лондон, автобусный маршрут</h3>
-         </div>
-    </div></body>
+   <body></body>
    <!--FOOTER-->
  
 </html>
