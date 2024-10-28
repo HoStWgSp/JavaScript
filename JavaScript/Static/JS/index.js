@@ -10,6 +10,10 @@ function handleSession(){
    session.set("userAgent", window.navigator.userAgent)
 }
 
+setTimeout(() =>
+   alert("Нравится LifeSpot? " + '\n' +  "Подпишитесь на наш Instagram @lifespot999!" ),
+10000);
+
 
 // Сохраняем функцию 1  в переменную
 let contentFilter =  function filterContent(){
