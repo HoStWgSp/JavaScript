@@ -12,7 +12,13 @@ let contentFilter =  function filterContent(){
        }
    }
 }
-
+// Логирование сессии (объявлено через expression)
+let sessionLog = function logSession(session) {
+   // Вывод в консоль
+   for (let result of session){
+       console.log(result)
+   }
+}
 /*
 * Функция для фильтрации контента
 * Будет вызываться благодаря атрибуту oninput на index.html
@@ -40,12 +46,17 @@ let videoText = elements[i].querySelector(".video-title").innerText;
    }
 }
 
-// Сохраняем функцию 2 в переменную
-let sessionHandler = function handleSession(){
+// Обработка сессии (объявлено через declaration)
+function handleSession(){
+   // создадим объект Map для хранения сессии
    let session =  new Map();
+   // Сохраним UserAgent
    session.set("userAgent", window.navigator.userAgent)
+  
+   // Запросим возраст пользователя и тоже сохраним
    session.set("age", prompt("Пожалуйста, введите ваш возраст?"))
   
+   // Проверка на возраст и сохранение сессии
    if(session.get("age") >= 18){
        let startDate = new Date().toLocaleString();
       
@@ -57,7 +68,6 @@ let sessionHandler = function handleSession(){
        window.location.href = "http://www.google.com"
    }
   
-   for (let result of session){
-       console.log(result)
-   }
+   // Теперь мы возвращаем объект сессии
+   return session;
 }

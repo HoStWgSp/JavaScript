@@ -11,7 +11,11 @@
      
        <!-- Внутренний скрипт с вызовами функций -->
        <script>
-           sessionHandler();
+        // Создадим и обработаем сессию
+        let session = handleSession();
+       
+        // Логируем в консоль.
+        sessionLog(session)
        </script>
    </head>
   
