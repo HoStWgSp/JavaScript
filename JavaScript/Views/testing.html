@@ -12,17 +12,26 @@
        <!-- Внутренний скрипт с вызовами функций -->
        <script>
         // Создадим и обработаем сессию
-        let session = handleSession();
+        //let session = handleSession();
        
         // Логируем в консоль.
-        sessionLog(session)
+        //sessionLog(session)
        </script>
    </head>
   
    <header id="header-index">
        <h1>LifeSpot - тестовая страница</h1>
        <p>Здесь можно экспериментировать с кодом</p>
-       <input type="text" oninput="filterContent( document.getElementsByTagName('input')[0].value.toLowerCase() /* Аргумент - значение, введённое пользователем*/ )" size=50%>
+       <input type="text" oninput="
+        // Функция объявлена через expression
+       const inputParseFunction = function(){
+           return document.getElementsByTagName('input')[0].value.toLowerCase();
+       }
+      
+       // Вызов (функция в аргумент передаётся без круглых скобок)
+       filterContent( inputParseFunction )
+ 
+" size=50%>
    </header>
   
    <aside id="sidebar">
