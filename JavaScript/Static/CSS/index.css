@@ -22,9 +22,26 @@ header,footer,body,.video-container{
  p .navbar:hover{
     background-color: green;
  }
- /* p .navbar{
-    color: aliceblue;
- } */
+ .review-container,.review-button{
+   display: inline-block;
+   margin-top: 0.5em;
+   padding-left: 1%;
+   padding-top: 1%;
+}
+
+.review-container,.review-button{
+   display: inline-block;
+   margin-top: 0.5em;
+   padding-left: 1%;
+   padding-top: 1%;
+}
+ 
+.review-text{
+   display: block;
+   margin-top: 0.5em;
+   padding-left: 1%;
+   padding-top: 1%;
+}
  /*Глобальные стили для хедеров на всём сайте*/
  header{
     color: black;
