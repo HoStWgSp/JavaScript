@@ -16,6 +16,11 @@
        
         // Логируем в консоль.
         //sessionLog(session)
+ 
+        // Функция объявлена через declaration      
+        const inputParseFunction = function(){
+            return document.getElementsByTagName('input')[0].value.toLowerCase();
+        }
        </script>
    </head>
   
@@ -24,12 +29,12 @@
        <p>Здесь можно экспериментировать с кодом</p>
        <input type="text" oninput="
         // Функция объявлена через expression
-       const inputParseFunction = function(){
-           return document.getElementsByTagName('input')[0].value.toLowerCase();
-       }
+    //    const inputParseFunction = function(){
+    //        return document.getElementsByTagName('input')[0].value.toLowerCase();
+    //    }
       
-       // Вызов (функция в аргумент передаётся без круглых скобок)
-       filterContent( inputParseFunction )
+    //    // Вызов (функция в аргумент передаётся без круглых скобок)
+        filterContent( inputParseFunction )
  
 " size=50%>
    </header>
