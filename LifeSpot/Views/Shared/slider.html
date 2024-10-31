@@ -1,1 +1,27 @@
-﻿<p>===> Слайдер <===</p>
+﻿
+
+
+<ul id="slides">
+    <li class="slide showing"><img src="https://media.geeksforgeeks.org/wp-content/uploads/20240618140923/asus.jpg"
+     alt="photo"
+     class="fixed-size-image" /></li>
+    <li class="slide"><img src="https://media.geeksforgeeks.org/wp-content/uploads/20240618141932/61M1WuTUcUL_AC_UF10001000_QL80_-(1).jpg"
+     alt="photo" class="fixed-size-image" /></li>
+    <li class="slide"><img src="https://media.geeksforgeeks.org/wp-content/uploads/20240618140635/microsoft.jpeg"
+     alt="photo"
+     class="fixed-size-image" /></li>
+    <li class="slide">Slide 4</li>
+    <li class="slide">Slide 5</li>
+</ul>
+
+<script>
+    var slides = document.querySelectorAll('#slides .slide');
+    var currentSlide = 0;
+    var slideInterval = setInterval(nextSlide, 2000);
+
+    function nextSlide() {
+        slides[currentSlide].className = 'slide';
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].className = 'slide showing';
+    }
+</script>
